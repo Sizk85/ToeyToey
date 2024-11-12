@@ -39,7 +39,7 @@
 <body>
 
   <div>
-    <img id="character" src="character_normal.jpg" alt="ตัวละครน่ารักๆ">
+    <img id="character" src="character_angry_level_1.png">
     <div id="message">คิดถึงไหม? ❤️</div>
     <button onclick="respond(false)">ไม่</button>
     <button onclick="respond(true)">คิดถึง</button>
@@ -62,22 +62,22 @@
         angerLevel++;
         if (angerLevel === 1) {
           message.innerText = "ไม่คิดถึงจริงๆ เหรอ? 😠";
-          character.src = "character_angry1.jpg"; // รูปตัวละครโกรธเล็กน้อย
+          character.src = "character_angry_level_1.png"; // รูปตัวละครโกรธเล็กน้อย
         } else if (angerLevel === 2) {
           message.innerText = "ยังจะตอบไม่อีกเหรอ! 😡";
-          character.src = "character_angry2.jpg"; // รูปตัวละครโกรธมากขึ้น
-        } else if (angerLevel >= 3) {
+          character.src = "character_angry_level_2.png"; // รูปตัวละครโกรธมากขึ้น
+        } else if (angerLevel === 3) {
           message.innerText = "คิดถึงกันบ้างสิ!! 😤";
-          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
-        } else if (angerLevel >= 4) {
-          message.innerText = "ให้ตอบอีกที!! 😤";
-          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
-        }else if (angerLevel >= 5) {
-          message.innerText = "คิดถึงเลยนะ!! 😤";
-          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
-        }else if (angerLevel >= 6) {
-          message.innerText = "รอบสุดท้ายและ!! 😤";
-          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
+          character.src = "character_angry_level_3.png"; // รูปตัวละครโกรธยิ่งขึ้น
+        } else if (angerLevel === 4) {
+          message.innerText = "ทำไมไม่คิดถึงกันเลย! 😠";
+          character.src = "character_angry_level_4.png"; // รูปตัวละครโกรธมากกว่าเดิม
+        } else if (angerLevel === 5) {
+          message.innerText = "คิดถึงเลยนะ!! 😡";
+          character.src = "character_angry_level_5.png"; // รูปตัวละครโกรธมาก
+        } else if (angerLevel >= 6) {
+          message.innerText = "รอบสุดท้ายแล้วนะ!! 😤";
+          character.src = "character_angry_level_6.png"; // รูปตัวละครโกรธสุดๆ
         }
       }
     }
