@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>บอกรักสุดน่ารัก</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #ffccf9;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #character {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      border-radius: 50%;
+    }
+    #character:hover {
+      transform: scale(1.1);
+    }
+    #message {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #333;
+    }
+    #loveMessage {
+      display: none;
+      font-size: 2rem;
+      color: #ff66b2;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <img id="character" src="character_normal.jpg" alt="ตัวละครน่ารักๆ">
+    <div id="message">คิดถึงไหม? ❤️</div>
+    <button onclick="respond(false)">ไม่</button>
+    <button onclick="respond(true)">คิดถึง</button>
+    <div id="loveMessage">น่ารักจัง! รักเบบี๋น้า 💖</div>
+  </div>
+
+  <script>
+    let angerLevel = 0;
+
+    function respond(isThinkingOfMe) {
+      const message = document.getElementById("message");
+      const loveMessage = document.getElementById("loveMessage");
+      const character = document.getElementById("character");
+
+      if (isThinkingOfMe) {
+        message.style.display = "none";
+        loveMessage.style.display = "block";
+        character.src = "character_love.jpg"; // แสดงรูปตัวละครตอนบอกรัก
+      } else {
+        angerLevel++;
+        if (angerLevel === 1) {
+          message.innerText = "ไม่คิดถึงจริงๆ เหรอ? 😠";
+          character.src = "character_angry1.jpg"; // รูปตัวละครโกรธเล็กน้อย
+        } else if (angerLevel === 2) {
+          message.innerText = "ยังจะตอบไม่อีกเหรอ! 😡";
+          character.src = "character_angry2.jpg"; // รูปตัวละครโกรธมากขึ้น
+        } else if (angerLevel >= 3) {
+          message.innerText = "คิดถึงกันบ้างสิ!! 😤";
+          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
+        } else if (angerLevel >= 4) {
+          message.innerText = "ให้ตอบอีกที!! 😤";
+          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
+        }else if (angerLevel >= 5) {
+          message.innerText = "คิดถึงเลยนะ!! 😤";
+          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
+        }else if (angerLevel >= 6) {
+          message.innerText = "รอบสุดท้ายและ!! 😤";
+          character.src = "character_angry3.jpg"; // รูปตัวละครโกรธสุดๆ
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
